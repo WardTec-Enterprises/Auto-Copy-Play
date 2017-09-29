@@ -1,0 +1,239 @@
+######+ NHGB  PBCL & CYNL -#######
+#                                #
+# cebivqre='JneqGrp Ragrecevfrf' #
+#   nhgube='Fuvyb Xriva Jneq'    #
+#          irefvba='1.0'         #
+#     ohvyq_qngr='2017-09-23'    #
+##################################
+
+""" HFO NYOHZ PERNGBE vf n cebtenz gung jvyy nqq n phfgbz anzr
+    ynory gb n HFO Synfu Qevir naq pbcl cubgb svyrf sebz na FQ Pneq
+    sebz n pnzren jura vafregrq, bire gb gur Arj HFO fgbentr qrivpr.
+"""
+
+## VZCBEG SVYR YVOENEVRF ###
+vzcbeg bf, er, fgevat, gvzr, jvafbhaq
+sebz pglcrf vzcbeg jvaqyy
+
+### VAVGVNYVMR YVFGF NAQ INEVNOYRF ###
+qevirf_qrgrpgrq = []
+# PUNATR GUR FBHAQ YBPNGVBA VA GUVF NCC
+# fbhaq_ybp = 'K:\\JRQQVAT_NYOHZ_PERNGBE\\_fbhaqf\\'
+# ARJ FBHAQ YBPNGVBA ORYBJ
+fbhaq_ybp = 'P:\\Cebten~2\\JneqGrp\\_nhgbPbclCynl\\_nhqvbSvyrf\\'
+cerc_ybp = 'K:\\JRQQVAT_NYOHZ_PERNGBE\\_jrqqvat_hfo_cerc\\'
+# PUNATR GUR PBCL YBPNGVBA VA GUVF NCC
+# pbcl_ybp = 'K:\\jrqqvat_fnzcyrf\\'
+# ARJ PBCL YBPNGVBA ORYBJ
+# pbcl_ybp = 'K\\Ivqrbf\\'
+pbcl_ybp = '%HFRECEBSVYR%\\Ivqrbf\\'
+
+### CEBTENZ RAQ BCGVBAF ###
+qrs raq_tenprshy():
+    bf.flfgrz('pyf')
+    bf.flfgrz('pbybe 1s')
+    cevag "ZNEPHF, Gunax lbh sbe hfvat \"JNEQGRP'F NHGB PBCL & CYNL\"!\a\gAbj pybfvat gur Cebtenz."
+    jvafbhaq.CynlFbhaq(fbhaq_ybp+'nby_tbbqolr.jni', jvafbhaq.FAQ_SVYRANZR)
+    gvzr.fyrrc(3)
+    jvafbhaq.CynlFbhaq(fbhaq_ybp+'rkvg_pybfr.jni', jvafbhaq.FAQ_SVYRANZR)
+    erghea dhvg()
+
+qrs gvzr_bhg():
+    raq_pbhagre=10
+    juvyr raq_pbhagre > 0:
+        bf.flfgrz('pyf')
+        bf.flfgrz('pbybe 0p')
+        cevag "TBBQ OLR!\a",raq_pbhagre
+        jvafbhaq.Orrc(320, 200)
+        gvzr.fyrrc(1)
+        raq_pbhagre -= 1
+        pbagvahr
+    bf.flfgrz('pyf')
+    bf.flfgrz('pbybe 4s')
+    jvafbhaq.Orrc(1200, 100)
+    cevag ":(\a\a" * 10
+    jvafbhaq.Orrc(1200, 1600) 
+    erghea dhvg()
+
+qrs grezvangr(raq_bcg):
+    vs raq_bcg == 'tenprshy': erghea raq_tenprshy()
+    ryfr: erghea gvzr_bhg()
+
+### HFRE VACHG NAQ ERFCBAFRF ###
+qrs erfcbafr(glcr):
+    vs glcr == 'svaq_hfo':
+        cebzcg="Cyrnfr vafreg Fgbentr Qrivpr gb pbcl,\a gura cerff -----> <RAGRE>"
+        gvzr.fyrrc(1)
+        jvafbhaq.CynlFbhaq(fbhaq_ybp+'vafreg_hfo.jni', jvafbhaq.FAQ_SVYRANZR)
+    ryvs glcr == 'ortva_pbcl':cebzcg="\a\aARKG...\aCerff gur <RAGRE> xrl gb Ortva Pbcl..."
+    ryvs glcr == 'bx_gb_raq':cebzcg="\a\a\a***\gNYY SVYRF QBAR!\g\g***\aCyrnfr cerff <RAGRE> gb raq cebtenz."
+    juvyr Gehr:
+        inyvq_erfcbafr = enj_vachg(cebzcg)
+        vs yra(inyvq_erfcbafr) >= 1:
+            cevag "\aVainyvq Xrlobneq vachg qrgrpgrq!"
+            pbagvahr
+        ryfr:oernx
+
+### FGBENTR QEVIR QRGRPGVBA ###    
+qrs trg_qevirf():
+    ovgznfx = jvaqyy.xreary32.TrgYbtvpnyQevirf()
+    bf.flfgrz('pbybe 1r')
+    cevag "TNGUREVAT QVFX FGBENTR UNEQJNER VASB:\aCyrnfr Jnvg...\a\a"
+    sbe iby_yrggre va fgevat.hccrepnfr:
+        vs ovgznfx & 1:
+            qevirf_qrgrpgrq.nccraq(iby_yrggre)
+            cevag " Sbhaq Qvfx Fgbentr Qevir, Ibyhzr Yrggre: "+iby_yrggre+"\a|------------------------------------------|"
+            jvafbhaq.CynlFbhaq(fbhaq_ybp+'svaq_qevirf.jni', jvafbhaq.FAQ_SVYRANZR)
+        ovgznfx >>= 1
+    erghea qevirf_qrgrpgrq
+
+qrs eha_svaq_ibyhzr(pheerag_qevirf):
+    orsber=pheerag_qevirf
+    nggrzcgf=2
+    juvyr nggrzcgf > -1:
+        bf.flfgrz('pbybe 1s')
+        erfcbafr('svaq_hfo')
+        jvafbhaq.CynlFbhaq(fbhaq_ybp+'pubvpr_pbasvezngvba.jni', jvafbhaq.FAQ_SVYRANZR)
+        qb=Gehr
+        vs qb == Gehr:
+            bf.flfgrz('pyf')
+            nsgre = frg(trg_qevirf())
+            gvzr.fyrrc(1)
+            qevirf = nsgre - orsber
+            qrygn = yra(qevirf)
+            vs (qrygn):
+                sbe qevir va qevirf:
+                    vs bf.flfgrz('pq ' + qevir + ':') == 0:
+                        arj_hfo = fge(qevir)+':'
+                        bf.flfgrz('pbybe 2n')
+                        jvafbhaq.Orrc(520, 100)
+                        jvafbhaq.Orrc(620, 150)
+                        bf.flfgrz('pyf')
+                        cevag "Fhpprffshyyl sbhaq %q vafregrq Fgbentr Qrivpr, naq vg'f qevir yrggre vf %f" %(qrygn,arj_hfo)
+                        nggrzcgf = -2
+                        #BOFBYRGR NFX GB PBCL ERDHRFG ERFCBAFR
+                        #erfcbafr('ortva_pbcl')
+                        #PBCL CEBPRFF JVYY OR NHGBZNGVP VA GUVF NCC
+                        cevag "Svyrf jvyy pbcl nhgbzngvpnyyl gb gur K-gen Fgbentr Ybpngvba ba guvf CP"
+                        jvafbhaq.CynlFbhaq(fbhaq_ybp+'ohvyq_fbhaq_nve_jerapu.jni', jvafbhaq.FAQ_SVYRANZR)
+                        ernql_gb_pbcl=Gehr
+                        bf.flfgrz('pbybe 0n')
+                        bf.flfgrz('pyf')
+                        vs ernql_gb_pbcl == Gehr:
+                            # cerc_svyrf ABG ARRQRQ VA GUVF NCC
+                            #cerc_svyrf='ebobpbcl %f %f /ZVE /KQ "Flfgrz Ibyhzr Vasbezngvba" /AWU /AWF /AC  /AF /AQY /ASY' %(cerc_ybp, arj_hfo)
+                            #bf.flfgrz(cerc_svyrf)
+                            
+                            # ERIREFR PBCL YBPNGVBAF VA GUVF NCC SEBZ arj_hfo gb K:/ivqrbf
+                            #pbcl_cubgbf='ebobpbcl %f %f /RGN /R /AWU /AWF /AC' %(pbcl_ybp, arj_hfo)
+                            # ARJ PBQR ERIREFRQ BA ARKG YVAR
+                            pbcl_cubgbf='ebobpbcl %f %f /RGN' %(arj_hfo+'\\Qbphzragf\\Ivqrbf\\', pbcl_ybp) 
+                            bf.flfgrz(pbcl_cubgbf)
+                            gvzr.fyrrc(2)
+                            jvafbhaq.CynlFbhaq(fbhaq_ybp+'nby_svyrfqbar.jni', jvafbhaq.FAQ_SVYRANZR)
+                            erfcbafr('bx_gb_raq')
+                            svavfurq=Gehr
+                            vs svavfurq == Gehr:grezvangr('tenprshy')
+                            ryfr:cnff # znxr frpbaq pbcl?
+                        ryfr:cnff # dhvg be vafgehpgvbaf gb erfgneg 1fg qrgrpgvba cebprff    
+                    ryfr:cevag "Uzz, Fbzrguvat jrag jebat. CYRNFR PYBFR gur Cebtenz naq Fgneg Ntnva."
+            ryfr:
+                bf.flfgrz('pyf')
+                jvafbhaq.Orrc(320, 100)
+                jvafbhaq.Orrc(320, 100)
+                jvafbhaq.Orrc(320, 200)
+                bf.flfgrz('pbybe p0')
+                vs nggrzcgf > 0:
+                    cevag "Ibyhzrf ner gur fnzr, Gel ntnva!"
+                    gvzr.fyrrc(3)
+                    bf.flfgrz('pyf')
+                    bf.flfgrz('pbybe 1r')
+                    cevag "Nggrzcgf Erznvavat:",nggrzcgf
+                    gvzr.fyrrc(4)
+                    nggrzcgf -= 1
+                    bf.flfgrz('pyf')
+                ryfr:
+                    cevag "Fbeel! Cebtenz jvyy abj fuhgqbja."
+                    jvafbhaq.CynlFbhaq(fbhaq_ybp+'tbqmvyyn.jni', jvafbhaq.FAQ_SVYRANZR)
+                    oernx
+                pbagvahr
+    erghea grezvangr(Gehr)
+
+qrs ynhapu_qevir_grfg():    
+    orsber = frg(trg_qevirf())
+    gvzr.fyrrc(1)
+    cevag "\aPheerag Qevirf qrgrpgrq:",qevirf_qrgrpgrq,'\a\a'
+    erghea eha_svaq_ibyhzr(orsber)
+    
+### PERNGR PHFGBZ HFO YNORY ANZR ###
+qrs phfgbz_nhgbeha_svyr():
+    cevag "\aGur fgnaqneq qrsnhyg ynory anzr sbe gur HFO qvfx jvyy or: \"Jrqqvat Cubgbf\"\aJbhyq lbh yvxr gb xrrc guvf anzr, be znxr n arj phfgbz anzr sbe gur HFO qvfx?"
+    cevag "\a\a<L> LRF - Xrrc vg!; be <A> AB - znxr n Arj anzr?"
+    jvafbhaq.CynlFbhaq(fbhaq_ybp+'crnprshy_fgneg_hc.jni', jvafbhaq.FAQ_SVYRANZR)
+    xrrc_qrsnhyg=[]
+    juvyr Gehr:
+        ynory_pubvpr=fge.hccre(enj_vachg("\aCyrnfr cerff n yrggre sebz gur pubvprf nobir, gura cerff <RAGRE> "))
+        vs ynory_pubvpr !='L'naq ynory_pubvpr !='A':
+            cevag "\aCyrnfr bayl cerff <L> be <A> xrlf sbe lbhe pubvpr:\a'L' = Xrrc nf 'Jrqqvat Cubgbf'\a'A' = Jevgr lbhe bja arj phfgbz anzr ynory"
+            jvafbhaq.CynlFbhaq(fbhaq_ybp+'fbeel_cyvat.jni', jvafbhaq.FAQ_SVYRANZR)
+            pbagvahr
+        ryfr:
+            bf.flfgrz('pyf')
+            jvafbhaq.CynlFbhaq(fbhaq_ybp+'pubvpr_pbasvezngvba.jni', jvafbhaq.FAQ_SVYRANZR)
+            xrrc_qrsnhyg.nccraq(ynory_pubvpr)
+            oernx           
+    vs xrrc_qrsnhyg[0] == 'L':
+        ynory_anzr = 'Jrqqvat Cubgbf'
+    ryfr:
+        cevag "Arkg...\a"
+        juvyr Gehr:
+            ynfg_anzr=enj_vachg("Cyrnfr bayl glcr gur Ynfg Anzr(f) sbe gur HFO ynory,\agura cerff <RAGRE> ")
+            vs yra(ynfg_anzr) >32:
+                cevag "\a\aFbeel, ynory anzr pnaabg or ybatre guna 32 yrggref"
+                jvafbhaq.CynlFbhaq(fbhaq_ybp+'fbeel_cyvat.jni', jvafbhaq.FAQ_SVYRANZR)
+                pbagvahr
+            ryfr:
+                oernx
+        jvafbhaq.CynlFbhaq(fbhaq_ybp+'pubvpr_pbasvezngvba.jni', jvafbhaq.FAQ_SVYRANZR)
+        ynory_anzr = er.fho(e"[N-Mn-m]+('[N-Mn-m]+)?", ynzoqn zb: zb.tebhc(0)[0].hccre() + zb.tebhc(0)[1:].ybjre(), ynfg_anzr)
+        vs yra(ynory_anzr) <=17:
+            ynory_anzr = ynory_anzr+' Jrqqvat Cubgbf'
+        ryvs yra(ynory_anzr) <=24:
+            ynory_anzr = ynory_anzr+' Jrqqvat'
+        ryvs yra(ynory_anzr) <=25:
+            ynory_anzr = ynory_anzr+' Cubgbf'    
+        ryfr:cnff
+    bf.flfgrz('pyf')
+    cevag "GUNAX LBH!\aGur phfgbz HFO ynory anzr jvyy or:\g"+'"'+ynory_anzr+'"\a\a'
+    nhgbeha = bcra(cerc_ybp+'nhgbeha.vas', 'j')
+    nhgbeha.jevgryvarf([';+\a','; Jrqqvat Fgbentr Qevir\a',';-\a\a','[Irefvba]\a','Cebivqre=%JneqGrp%\a\a','[nhgbeha]\a','hfrNhgbCynl=0\a','ynory=',ynory_anzr,'\a','vpba=\vpb\jrqqvat-Evatf.vpb,0\a','vpba=\vpaf\jrqqvat-Evatf.vpaf,1\a\a','[Fgevatf]\a','VAS_Cebivqre="JneqGrp Ragrecevfrf"']);
+    nhgbeha.pybfr()
+    erghea ynhapu_qevir_grfg()
+
+### FGNEG GUR CEBTENZ ###
+qrs fgneg_hc():
+    bf.flfgrz('gvgyr JneqGrp Ragrecevfrf - NHGB PBCL & CYNL - ire 1.0')
+    bf.flfgrz('pbybe 1s')
+    cevag "\g\g***   JRYPBZR, ZNEPHF!   ***"
+    jvafbhaq.Orrc(420, 100) # serdhrapl, qhengvba
+    jvafbhaq.Orrc(420, 275)
+    jvafbhaq.Orrc(450, 150)
+    jvafbhaq.Orrc(500, 475)
+    jvafbhaq.CynlFbhaq(fbhaq_ybp+'nby_jrypbzr.jni', jvafbhaq.FAQ_SVYRANZR)
+    # FRG ANZR BS HFO QEVIR PBQR ABG ARPRFFNEL VA GUVF NCC
+    # erghea phfgbz_nhgbeha_svyr()
+    # NQINAPR GB PURPX QEVIR PUNATRF
+    erghea ynhapu_qevir_grfg()
+
+qrs nhgbFcynfu():
+    # FGNEG "JneqGrp_NhgbPbclCynl_Fcynfu_Ybtb" 'P:\\Cebten~2\\JneqGrp\\_nhgbQrcyblHFO\\NhgbFcynfu\\nhgbfcynfu.rkr'
+    bf.flfgrz('P:/Cebten~2/JneqGrp/_nhgbPbclCynl/NhgbFcynfu/nhgbfcynfu.rkr')
+    #gvzr.fyrrc(7)
+    erghea fgneg_hc()
+
+qrs znva():
+    vs __anzr__ == '__znva__':
+        # erghea fgneg_hc()
+        erghea nhgbFcynfu()
+
+znva()
