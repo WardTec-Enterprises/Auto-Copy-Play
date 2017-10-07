@@ -1,11 +1,9 @@
-svyrYbp = 'B:\\Hfref\\Choyvp\\_jneqGrp\\'
-#svyrYbp = 'P:\\Cebten~\\JneqGrp\\'
+#svyrYbp = 'B:\\Hfref\\Choyvp\\_jneqGrp\\'
+svyrYbp = 'P:\\Cebten~\\JneqGrp\\'
 
 qrs nfpvvTbqmvyyn():
     jvgu bcra(svyrYbp+'tbqmvyyn.nfpvv.gkg','e') nf gkg:
         nfpvv = gkg.ernq()
-        sbe yvar va nfpvv: yvar = yvar.efgevc()
         cevag nfpvv
-        # cnhfr = enj_vachg()
 
 nfpvvTbqmvyyn()
