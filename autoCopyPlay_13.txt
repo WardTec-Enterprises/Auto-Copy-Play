@@ -12,7 +12,7 @@
     Bcgvbanyyl erzbirf gur svyrf nsgre pbclvat gb uneqqevir. 
 """
 
-## VZCBEG SVYR YVOENEVRF ###
+### VZCBEG SVYR YVOENEVRF ###
 vzcbeg bf, er, fgevat, gvzr, jvafbhaq
 sebz pglcrf vzcbeg jvaqyy
 sebz qngrgvzr vzcbeg qngrgvzr, qngr
@@ -28,12 +28,13 @@ cerc_ybp = 'K:\\JRQQVAT_NYOHZ_PERNGBE\\_jrqqvat_hfo_cerc\\'
 # pbcl_ybp = 'K:\\jrqqvat_fnzcyrf\\'
 # ARJ PBCL YBPNGVBA ORYBJ
 # pbcl_ybp = 'K\\Ivqrbf\\'
-pbcl_ybp = '%HFRECEBSVYR%\\Ivqrbf\\'+sbyqre_anzr
 
 ### TRARENGR SBYQRE ANZR JVGU PHEERAG QNGR & GVZR ###
 qrs trarengr_sbyqreAnzr():
     pheerag_qngrGvzr = fge(qngrgvzr.abj())
     erghea pheerag_qngrGvzr[:16]
+sbyqre_anzr = trarengr_sbyqreAnzr()
+pbcl_ybp = '%HFRECEBSVYR%\\Ivqrbf\\'+sbyqre_anzr
 
 ### CEBTENZ RAQ BCGVBAF ###
 qrs raq_tenprshy():
@@ -136,7 +137,7 @@ qrs eha_svaq_ibyhzr(pheerag_qevirf):
                             #pbcl_cubgbf='ebobpbcl %f %f /RGN /R /AWU /AWF /AC' %(pbcl_ybp, arj_hfo)
                             # ARJ PBQR ERIREFRQ BA ARKG YVAR
                             #pbcl_cubgbf='ebobpbcl %f %f /RGN' %(arj_hfo+'\\Qbphzragf\\Ivqrbf\\', pbcl_ybp)
-                            sbyqre_anzr = trarengr_sbyqreAnzr()
+                            #sbyqre_anzr = trarengr_sbyqreAnzr()
                             pbcl_cubgbf='ebobpbcl %f %f /RGN' %(arj_hfo+'\\QPVZ\\100WYPNZ\\', pbcl_ybp) 
                             bf.flfgrz(pbcl_cubgbf)
                             gvzr.fyrrc(2)
