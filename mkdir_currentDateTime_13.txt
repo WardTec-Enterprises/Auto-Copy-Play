@@ -1,9 +1,9 @@
+vzcbeg gvzr
 sebz qngrgvzr vzcbeg qngrgvzr, qngr
 
 qrs trarengr_sbyqreAnzr():
-    pheerag_qngrGvzr = qngrgvzr.abj()
+    pheerag_qngrGvzr = fge(qngrgvzr.abj())
     erghea pheerag_qngrGvzr[:16]
-
-cevag trarengr_sbyqreAnzr
-
+    
+cevag trarengr_sbyqreAnzr()
 cnhfr = enj_vachg()
