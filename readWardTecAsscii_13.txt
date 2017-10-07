@@ -1,0 +1,10 @@
+#svyrYbp = 'B:\\Hfref\\Choyvp\\_jneqGrp\\'
+svyrYbp = 'P:\\Cebten~\\JneqGrp\\'
+
+qrs nfpvvJneqGrp():
+    jvgu bcra(svyrYbp+'nfpvv_JneqGrp.gkg','e') nf gkg:
+        nfpvv = gkg.ernq()
+        cevag nfpvv
+
+
+nfpvvJneqGrp()
