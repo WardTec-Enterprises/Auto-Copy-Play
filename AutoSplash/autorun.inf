@@ -1,0 +1,7 @@
+[autorun]
+icon=autosplash.exe
+open=autosplash.exe
+label=Auto Splash
+action=Show Splash Screen
+shell\open\command=autosplash.exe
+shell\open=Show Splash Image
