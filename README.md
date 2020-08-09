@@ -1,6 +1,6 @@
 WardTec Enterprises
 Las Vegas, NV - USA
-+1 (702) 900-UBET (4835)
++1 (702) 900-UBET (8238)
 e-mail: support@wardtec.net
 website: https://wardtec.net
 ===========================================
